@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+flask
+gunicorn
+=======
+flask
+gunicorn
+>>>>>>> 25f4ba287f36aa33cc4221597293dfe973cf5f15
