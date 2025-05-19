@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% block title %}Chyba 404{% endblock %} {% block
+content %}
+<h1 style="color: #ff5555">ERROR 404 :(</h1>
+<p>
+  Požadovaná stránka neexistuje alebo sa vyskytla chyba pri načítaní databázy.
+</p>
+<a href="{{ url_for('index') }}"><button>Späť</button></a>
+{% endblock %}

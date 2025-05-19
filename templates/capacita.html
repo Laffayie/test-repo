@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block title %}Suma Kapacity{% endblock %} {% block
+content %}
+<h2>Suma kapacity kurzov</h2>
+<table>
+  <tr>
+    <th>Suma</th>
+  </tr>
+  <tr>
+    <td>{{ suma }}</td>
+  </tr>
+</table>
+<a href="{{ url_for('index') }}"><button>Späť</button></a>
+{% endblock %}

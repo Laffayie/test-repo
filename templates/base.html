@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        background-color: #2f3136;
+        color: #ffffff;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        display: flex;
+        min-height: 100vh;
+      }
+      .sidebar {
+        width: 240px;
+        background-color: #202225;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .sidebar a {
+        color: #b9bbbe;
+        text-decoration: none;
+        padding: 10px 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        transition: background-color 0.2s, color 0.2s;
+      }
+      .sidebar a:hover {
+        background-color: #35373c;
+        color: #ffffff;
+      }
+      .sidebar a i {
+        margin-right: 10px;
+      }
+      .content {
+        flex: 1;
+        padding: 20px;
+        background-color: #36393f;
+      }
+      h1,
+      h2 {
+        color: #ffffff;
+        font-weight: 600;
+      }
+      a {
+        color: #7289da;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      button,
+      input[type="submit"] {
+        background-color: #7289da;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      button:hover,
+      input[type="submit"]:hover {
+        background-color: #677bc4;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="password"] {
+        background-color: #202225;
+        color: #ffffff;
+        border: 1px solid #1e1f22;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        margin: 5px 0;
+        width: 200px;
+      }
+      label {
+        color: #b9bbbe;
+        font-size: 14px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background-color: #2f3136;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #1e1f22;
+      }
+      th {
+        background-color: #7289da;
+        color: #ffffff;
+      }
+      tr:hover {
+        background-color: #35373c;
+      }
+      hr {
+        border-color: #1e1f22;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Domov</a>
+      <a href="{{ url_for('registracia_form') }}"
+        ><i class="fas fa-user-plus"></i> Registrácia trénera</a
+      >
+      <a href="{{ url_for('registracia_kurzu') }}"
+        ><i class="fas fa-book"></i> Registrácia kurzu</a
+      >
+      <a href="{{ url_for('zobraz_trenerov_kurz') }}"
+        ><i class="fas fa-users"></i> Tréneri a kurzy</a
+      >
+      <a href="{{ url_for('zobraz_kurzy') }}"
+        ><i class="fas fa-list"></i> Kurzy</a
+      >
+      <a href="{{ url_for('zobraz_miesta') }}"
+        ><i class="fas fa-map-marker-alt"></i> Miesta</a
+      >
+      <a href="{{ url_for('zobraz_capacitu') }}"
+        ><i class="fas fa-chart-bar"></i> Kapacita</a
+      >
+    </div>
+    <div class="content">{% block content %} {% endblock %}</div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block title %}Zoznam Trénerov a Kurzov{% endblock
+%} {% block content %}
+<h2>Zoznam trénerov a kurzov</h2>
+<table>
+  <tr>
+    <th>ID Trénera</th>
+    <th>Meno Trénera</th>
+    <th>Názov kurzu</th>
+  </tr>
+  {% for trener in kurzy %}
+  <tr>
+    <td>{{ trener[0] }}</td>
+    <td>{{ trener[1] }}</td>
+    <td>{{ trener[2] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('index') }}"><button>Späť</button></a>
+{% endblock %}

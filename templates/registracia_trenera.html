@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}Registrácia Trénera{% endblock %} {%
+block content %}
+<h2>Registrácia trénera</h2>
+<form action="{{ url_for('registracia_trenera') }}" method="post">
+  <label for="meno">Meno:</label><br />
+  <input type="text" id="meno" name="meno" required /><br />
+
+  <label for="priezvisko">Priezvisko:</label><br />
+  <input type="text" id="priezvisko" name="priezvisko" required /><br />
+
+  <label for="specializacia">Špecializácia:</label><br />
+  <input type="text" id="specializacia" name="specializacia" required /><br />
+
+  <label for="telefon">Telefón:</label><br />
+  <input type="text" id="telefon" name="telefon" required /><br />
+
+  <label for="heslo">Heslo:</label><br />
+  <input type="password" id="heslo" name="heslo" required /><br />
+
+  <input type="submit" value="Registrovať" />
+</form>
+<hr />
+<a href="{{ url_for('index') }}">Späť</a>
+{% endblock %}

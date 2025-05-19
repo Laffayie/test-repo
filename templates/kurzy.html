@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Kurzy</title>
-  </head>
-
-  <body>
-    <h2>Zoznam kurzov:</h2>
-    {%for kurz in kurzy%}
-    <p>{{kurz}}</p>
-    {% endfor %}
-    <br /><a href="/"><button>Späť</button></a>
-  </body>
-</html>
+{% extends "base.html" %} {% block title %}Zoznam Kurzov{% endblock %} {% block
+content %}
+<h2>Zoznam kurzov</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Názov kurzu</th>
+  </tr>
+  {% for kurz in kurzy %}
+  <tr>
+    <td>{{ kurz.ID_Kurzu }}</td>
+    <td>{{ kurz.Nazov_kurzu }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('index') }}"><button>Späť</button></a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}Registrácia Kurzu{% endblock %} {%
+block content %}
+<h1>Registrácia Kurzu</h1>
+<form action="{{ url_for('registracia_kurza') }}" method="post">
+  <label for="nazov">Názov kurzu:</label><br />
+  <input type="text" id="nazov" name="nazov" required /><br />
+
+  <label for="typ_sport">Typ Športu:</label><br />
+  <input type="text" id="typ_sport" name="typ_sport" required /><br />
+
+  <label for="max_poc_uc">Maximálny počet účastníkov:</label><br />
+  <input type="text" id="max_poc_uc" name="max_poc_uc" required /><br />
+
+  <label for="id_tre">ID Trénera:</label><br />
+  <input type="number" id="id_tre" name="id_tre" required /><br />
+
+  <input type="submit" value="Registrovať" />
+</form>
+<hr />
+<a href="{{ url_for('index') }}">Späť</a>
+{% endblock %}
