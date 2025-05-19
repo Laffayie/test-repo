@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kurzy</title>
+  </head>
+
+  <body>
+    <h2>Registrácia trénera</h2>
+    <form action="/registracia_trenera" method="post">
+      <label>Meno:</label><br />
+      <input type="text" name="meno" required /><br /><br />
+
+      <label>Priezvisko:</label><br />
+      <input type="text" name="priezvisko" required /><br /><br />
+
+      <label>Špecializácia:</label><br />
+      <input type="text" name="specializacia" required /><br /><br />
+
+      <label>Telefón:</label><br />
+      <input type="text" name="telefon" required /><br /><br />
+
+      <label>Heslo:</label><br />
+      <input type="password" name="heslo" required /><br /><br />
+
+      <button type="submit">Registrovať</button>
+    </form>
+    <hr />
+    <a href="/">Späť</a>
+
+    <style>
+      label {
+        font-weight: 700;
+        font-size: 20px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      input {
+        width: 300px;
+        height: 30px;
+        border: solid 1px #57534e;
+        border-radius: 5px;
+      }
+
+      input :focus {
+        border: solid 1px #09ff00;
+        border-radius: 5px;
+        background-color: #2e573b;
+      }
+    </style>
+  </body>
+</html>

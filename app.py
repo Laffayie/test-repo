@@ -192,29 +192,7 @@ def registracia_kurza():
 
 @app.route('/registracia_trenera', methods=['GET'])
 def registracia_form():
-    return '''
-        <h2>Registrácia trénera</h2>
-        <form action="/registracia_trenera" method="post">
-            <label>Meno:</label><br>
-            <input type="text" name="meno" required><br><br>
-
-            <label>Priezvisko:</label><br>
-            <input type="text" name="priezvisko" required><br><br>
-
-            <label>Špecializácia:</label><br>
-            <input type="text" name="specializacia" required><br><br>
-
-            <label>Telefón:</label><br>
-            <input type="text" name="telefon" required><br><br>
-
-            <label>Heslo:</label><br>
-            <input type="password" name="heslo" required><br><br>
-
-            <button type="submit">Registrovať</button>
-        </form>
-        <hr>
-        <a href="/">Späť</a>
-    '''
+    return render_template("registrate_trener.html")
 
 
 # API ENDPOINT NA SPRACOVANIE REGISTRÁCIE. Mapuje sa na mená elementov z formulára z predošlého requestu (pomocou request.form[...])
