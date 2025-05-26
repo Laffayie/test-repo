@@ -1,13 +1,31 @@
 {% extends "base.html" %} {% block title %}Suma Kapacity{% endblock %} {% block
 content %}
-<h2>Suma kapacity kurzov</h2>
-<table>
-  <tr>
-    <th>Suma</th>
-  </tr>
-  <tr>
-    <td>{{ suma }}</td>
-  </tr>
-</table>
-<a href="{{ url_for('index') }}"><button>Späť</button></a>
+<div class="max-w-md mx-auto mt-10">
+  <div class="glass p-6 rounded-lg shadow-lg">
+    <h2
+      class="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"
+    >
+      Suma kapacity kurzov
+    </h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <thead class="bg-gray-800">
+          <tr>
+            <th class="p-4">Suma</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-700">
+            <td class="p-4">{{ suma }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <a
+      href="{{ url_for('index') }}"
+      class="mt-6 block text-center px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
+      >{{t.back}}</a
+    >
+  </div>
+</div>
 {% endblock %}

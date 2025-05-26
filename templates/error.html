@@ -1,8 +1,17 @@
 {% extends "base.html" %} {% block title %}Chyba 404{% endblock %} {% block
 content %}
-<h1 style="color: #ff5555">ERROR 404 :(</h1>
-<p>
-  Požadovaná stránka neexistuje alebo sa vyskytla chyba pri načítaní databázy.
-</p>
-<a href="{{ url_for('index') }}"><button>Späť</button></a>
+<div class="max-w-md mx-auto mt-10">
+  <div class="glass p-6 rounded-lg shadow-lg bg-red-900/50">
+    <h1 class="text-3xl font-bold mb-4 text-red-400">ERROR 404 :(</h1>
+    <p class="text-gray-300">
+      Požadovaná stránka neexistuje alebo sa vyskytla chyba pri načítaní
+      databázy.
+    </p>
+    <a
+      href="{{ url_for('index') }}"
+      class="mt-6 block text-center px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
+      >{{t.back}}</a
+    >
+  </div>
+</div>
 {% endblock %}

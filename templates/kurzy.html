@@ -1,17 +1,35 @@
 {% extends "base.html" %} {% block title %}Zoznam Kurzov{% endblock %} {% block
 content %}
-<h2>{{t.courses_list}}</h2>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Názov kurzu</th>
-  </tr>
-  {% for kurz in kurzy %}
-  <tr>
-    <td>{{ kurz.ID_Kurzu }}</td>
-    <td>{{ kurz.Nazov_kurzu }}</td>
-  </tr>
-  {% endfor %}
-</table>
-<a href="{{ url_for('index') }}"><button>Späť</button></a>
+<div class="max-w-3xl mx-auto mt-10">
+  <div class="glass p-6 rounded-lg shadow-lg">
+    <h2
+      class="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"
+    >
+      {{t.courses_list}}
+    </h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <thead class="bg-gray-800">
+          <tr>
+            <th class="p-4">ID</th>
+            <th class="p-4">Názov kurzu</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for kurz in kurzy %}
+          <tr class="border-b border-gray-700">
+            <td class="p-4">{{ kurz.ID_Kurzu }}</td>
+            <td class="p-4">{{ kurz.Nazov_kurzu }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <a
+      href="{{ url_for('index') }}"
+      class="mt-6 block text-center px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
+      >{{t.back}}</a
+    >
+  </div>
+</div>
 {% endblock %}

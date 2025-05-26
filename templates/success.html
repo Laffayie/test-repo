@@ -1,6 +1,18 @@
 {% extends "base.html" %} {% block title %}Úspech{% endblock %} {% block content
 %}
-<h2>{{ message }}</h2>
-<hr />
-<a href="{{ url_for('index') }}"><button>Späť</button></a>
+<div class="max-w-md mx-auto mt-10">
+  <div class="glass p-6 rounded-lg shadow-lg bg-green-900/50">
+    <h2
+      class="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500"
+    >
+      {{ message }}
+    </h2>
+    <hr class="my-6 border-gray-700" />
+    <a
+      href="{{ url_for('index') }}"
+      class="block text-center px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
+      >{{t.back}}</a
+    >
+  </div>
+</div>
 {% endblock %}

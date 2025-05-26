@@ -4,10 +4,10 @@
 TRANSLATIONS = {
     "sk": {
         "courses_list": "Zoznam kurzov",
-        "back": "Spat",
+        "back": "Späť",
         "welcome": "Vitajte",
         "login": "Prihlásiť sa",
-        "register": "Registrovať sa",
+        "register": "Registrovať",
         "courses": "Kurzy",
         "trainers": "Tréneri",
         "locations": "Miesta",
