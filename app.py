@@ -1,11 +1,14 @@
-
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, redirect, url_for, request, render_template, session
 from flask_sqlalchemy import SQLAlchemy
 import hashlib
 import os
 import uuid
+from i18n import TRANSLATIONS, SUPPORTED
+from flask import g, session
+
 
 app = Flask(__name__, instance_relative_config=True)
+app.secret_key = os.urandom(24)  # Required for session
 
 # Ensure instance folder exists
 os.makedirs(app.instance_path, exist_ok=True)
@@ -65,6 +68,27 @@ def affine_encrypt(text, key_a=5, key_b=8):
         else:
             result += char
     return result
+
+# Language switching route
+
+
+# Initialize language from URL parameter, session, or use default
+@app.before_request
+def before_request():
+    # First check URL parameter
+    lang = request.args.get('lang')
+    if lang not in SUPPORTED:
+        lang = session.get("lang", "sk")
+        session["lang"] = lang
+    g.t = TRANSLATIONS[lang]
+        
+
+# Add language context processor
+@app.context_processor
+def inject_language():
+    return dict(t=g.t)
+
+
 
 # Routes
 @app.route('/')
